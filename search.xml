@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JAVA/SpringBoot</title>
-    <url>/2023/01/09/JAVA-SpringBoot/</url>
-    <content><![CDATA[<p>1.pom文件加入新的依赖，再写代码没有提示。</p>
-<p>答：右击项目名称，Mavean&gt;Reload project。</p>
-<p>2.@Data相当于@Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode这5个注解的合集。</p>
-<p>3.@Repository用于标注数据访问组件，即DAO组件；他在类路径下寻找标注了上述注解的类，并把这些类纳入进spring容器中管理。</p>
-<p>@Repository：这个注解是具有类似用途和功能的@Component 注解的特化。它为 DAO 提供了额外的好处。它将 DAO 导入 IoC 容器，并使未经检查的异常有资格转换为 Spring DataAccessException。</p>
-<p>4.注入简单来说就是将某个值赋值给某个bean的属性,其实就是给某个bean的属性赋值,再简单点说就是给某个类的属性赋值,但是赋值的方式不是通过new 关键字或者其他直接复制,而是通过spring来赋值的。</p>
-<p>5.Spring的注解形式：<br>@Repository、@Service、@Controller，它们分别对应存储层Bean，业务层Bean，和展示层Bean。</p>
-<p>6.collection集合是java中提供的一种容器，可以用来存储多个数据。</p>
-<p>集合和数组既然都是容器，它们有啥区别呢？</p>
-<p>6.1数组的长度是固定的。集合的长度是可变的。</p>
-<p>6.2数组中存储的是同一类型的元素，可以存储基本数据类型值。集合存储的都是对象。而且对象的类型可以不一致。在开发中一般当对象多的时候，使用集合进行存储。</p>
-<p>7.Map.values() 方法用来获取 Map 集合中的所有键值对象。</p>
-<p>8.2021.11.12 关于 Could not autowire. No beans of ‘DataSource‘ type found.问题解决办法 :</p>
-<pre><code> 8.1在@Autowired后面加(required = false)
+    <title>VUE</title>
+    <url>/2023/01/09/VUE/</url>
+    <content><![CDATA[<p>想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象<br>root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法<br>root容器里的代码被称为Vue模板<br>Vue实例与容器是一一对应的<br>真实开发中只有一个Vue实例，并且会配合着组件一起使用</p>
+中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性
+<p>一旦data中的数据发生变化，那么模板中用到该数据的地方也会自动更新<br>Vue模板语法包括两大类：</p>
+<pre><code>插值语法：
+    功能：用于解析标签体内容
+    写法：&#123;&#123;xxx&#125;&#125;，xxx是js表达式，且可以直接读取到data中的所有区域
 
-      @Autowired(required = false)
- 8.2鼠标移到报错处,用快捷键:ALT+INS ,后选第一个按Ende,在按Ende ,降低 Autowired 检测的级别，将 Severity 的级别由之前的 error 改成 warning 或其它可以忽略的级别。
+指令语法：
+    功能：用于解析标签（包括：标签属性、标签体内容、绑定事件…）
+    举例：&lt;a v-bind:href=&quot;xxx&quot;&gt;或简写为&lt;a :href=&quot;xxx&quot;&gt;，xxx同样要写js表达式，且可以直接读取到data中的所有属性
 </code></pre>
-<p>9.driver-class-name: com.mysql.jdbc.Driver:适用于mysql5以上的。driver-class-name: com.mysql.cj.jdbc.Driver：适用于mysql8以上的。</p>
-<p>10.Failed to bind properties under ‘spring.datasource’ to javax.sql.DataSource:</p>
-<p>根据错误的指示原因，可以发现是没有导入log4j的依赖</p>
-<pre><code>    &lt;!-- log4j --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;log4j&lt;/groupId&gt;
-        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
-        &lt;version&gt;1.2.17&lt;/version&gt;
-    &lt;/dependency&gt;
+]]></content>
+  </entry>
+  <entry>
+    <title>Javascript</title>
+    <url>/2023/01/09/Javascript/</url>
+    <content><![CDATA[<pre><code>JavaScript操作DOM的本质是=获取+触发+改变
+
+目的：就是用来操作内存中的DOM节点
+    修改DOM节点的属性
+    过javascript语法组织逻辑代码操作DOM
+    BOM(window)它包含了DOM
+    DOM(document)
+    script脚本推荐放在最下边好处：防止因网络问题，页面加载时间长，出现空白；即便网络问题，浏览器也把DOM加载渲染完成，等待从服务端下载完js脚本，出现效果
+    css不放在最下面原因通俗地讲：好比先穿好衣服在出去，浏览器先把css样式准备好，在加载结构层，使得页面有样子；如果放在下面，因为页面是从上往下加载，没有css，就剩下裸露的标签，很难看，使得用户体验不好
 </code></pre>
-<p>11.通常， @Bean方法在@Configuration 类中声明。</p>
 ]]></content>
   </entry>
   <entry>
@@ -76,42 +73,45 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Javascript</title>
-    <url>/2023/01/09/Javascript/</url>
-    <content><![CDATA[<pre><code>JavaScript操作DOM的本质是=获取+触发+改变
-
-目的：就是用来操作内存中的DOM节点
-    修改DOM节点的属性
-    过javascript语法组织逻辑代码操作DOM
-    BOM(window)它包含了DOM
-    DOM(document)
-    script脚本推荐放在最下边好处：防止因网络问题，页面加载时间长，出现空白；即便网络问题，浏览器也把DOM加载渲染完成，等待从服务端下载完js脚本，出现效果
-    css不放在最下面原因通俗地讲：好比先穿好衣服在出去，浏览器先把css样式准备好，在加载结构层，使得页面有样子；如果放在下面，因为页面是从上往下加载，没有css，就剩下裸露的标签，很难看，使得用户体验不好
-</code></pre>
-]]></content>
-  </entry>
-  <entry>
-    <title>VUE</title>
-    <url>/2023/01/09/VUE/</url>
-    <content><![CDATA[<p>想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象<br>root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法<br>root容器里的代码被称为Vue模板<br>Vue实例与容器是一一对应的<br>真实开发中只有一个Vue实例，并且会配合着组件一起使用</p>
-中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性
-<p>一旦data中的数据发生变化，那么模板中用到该数据的地方也会自动更新<br>Vue模板语法包括两大类：</p>
-<pre><code>插值语法：
-    功能：用于解析标签体内容
-    写法：&#123;&#123;xxx&#125;&#125;，xxx是js表达式，且可以直接读取到data中的所有区域
-
-指令语法：
-    功能：用于解析标签（包括：标签属性、标签体内容、绑定事件…）
-    举例：&lt;a v-bind:href=&quot;xxx&quot;&gt;或简写为&lt;a :href=&quot;xxx&quot;&gt;，xxx同样要写js表达式，且可以直接读取到data中的所有属性
-</code></pre>
-]]></content>
-  </entry>
-  <entry>
     <title>数据库</title>
     <url>/2023/01/09/%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<p><strong>1.1 数据库的基本概念</strong><br>    数据库：<br>        长期储存在计算机内、有组织的、可共享的大量数据的集合。<br>        <em>基本特征：</em><br>        数据按一定的数据模型组织、描述和储存<br>        可为各种用户共享、冗余度较小、易扩展<br>        数据独立性较高<br>    数据    ：<br>        描述事物的符号记录<br>        数据有结构的：记录是计算机存储数据的一种格式或一种方法<br>    数据库管理系统及其功能：<br>        位于用户应用与操作系统之间的一层数据管理软件 ，是基础软件，是一个大型复杂的软件系统<br>        用途： 科学地组织和存储数据、高效地获取和维护数据<br>    数据库系统<br>        是指在计算机系统中引入数据库后的系统构成。<br>        在不引起混淆的情况下常常把数据库系统简称为数据库。<br>    元数据<br>        用来描述数据的数据。<br><strong>1.2 数据管理技术的产生和发展，以及每个阶段的特点</strong></p>
 <h2 id="2、数据模型"><a href="#2、数据模型" class="headerlink" title="2、数据模型"></a>2、数据模型</h2><p><strong>2.1数据模型的基本概念</strong><br>    是对现实世界数据特征的模拟和抽象，用来描述数据是如何组织、存储和操作的。</p>
 <p><strong>2.2数据模型的分类及每类常用的数据模型</strong><br>    对应不同的应用层次分成三种类型：分别是概念模型，逻辑模型和物理模型；<br>    概念模型：<br>        信息世界的基本概念：<br>            实体（Entity）<br>                客观存在并可相互区别的事物称为实体。<br>                可以是具体的人、事、物或抽象的概念。<br>            属性（Attribute）<br>                实体所具有的某一特性称为属性。一个实体可以由若干个属性来刻画。<br>            码（Key）<br>                唯一标识实体的属性集称为码。<br>            实体型（Entity Type）<br>                用实体名及其属性名集合来抽象和刻画同类实体称为实体型<br>            实体集（Entity Set）<br>                同一类型实体的集合称为实体集<br>            联系（Relationship）<br>                1.实体内部的联系：组成实体的各属性之间的联系<br>                2.实体之间的联系: 通常是指不同实体集之间的联系<br>                实体之间的联系有一对一（1:1）、一对多（1:n）和多对多（m:n）等多种类型<br><strong>2.3数据模型的组成要素</strong><br>    数据模型是严格定义的一组概念的集合， 精确地描述了系统的静态特性、动态特性和完整性约束条件。<br>    数据模型由三部分组成：<br>        数据结构–描述系统的静态特性    数据结构的类型来命名数据模型<br>        数据操作–描述系统的动态特性    对数据库中各种对象的实例允许执行的操作的集合<br>        完整性约束<br>            一组完整性规则的集合<br>            完整性规则：<br>                给定的数据模型中数据及其联系所具有的制约和依存规则。<br>                用以限定符合数据模型的数据库状态以及状态的变化，以保证数据的正确、有效和相容。<br>            数据模型对完整性约束条件的定义<br>                反映和规定必须遵守的基本的通用的完整性约束条件。<br>                提供定义完整性约束条件的机制，以反映具体应用所涉及的数据必须遵守的特定的语义约束条件。<br>            理解<br>                完整性约束使用一些规则，规范数据的操作，来保证数据的正确、有效和相容。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JAVA/SpringBoot</title>
+    <url>/2023/01/09/JAVA-SpringBoot/</url>
+    <content><![CDATA[<p>1.pom文件加入新的依赖，再写代码没有提示。</p>
+<p>答：右击项目名称，Mavean&gt;Reload project。</p>
+<p>2.@Data相当于@Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode这5个注解的合集。</p>
+<p>3.@Repository用于标注数据访问组件，即DAO组件；他在类路径下寻找标注了上述注解的类，并把这些类纳入进spring容器中管理。</p>
+<p>@Repository：这个注解是具有类似用途和功能的@Component 注解的特化。它为 DAO 提供了额外的好处。它将 DAO 导入 IoC 容器，并使未经检查的异常有资格转换为 Spring DataAccessException。</p>
+<p>4.注入简单来说就是将某个值赋值给某个bean的属性,其实就是给某个bean的属性赋值,再简单点说就是给某个类的属性赋值,但是赋值的方式不是通过new 关键字或者其他直接复制,而是通过spring来赋值的。</p>
+<p>5.Spring的注解形式：<br>@Repository、@Service、@Controller，它们分别对应存储层Bean，业务层Bean，和展示层Bean。</p>
+<p>6.collection集合是java中提供的一种容器，可以用来存储多个数据。</p>
+<p>集合和数组既然都是容器，它们有啥区别呢？</p>
+<p>6.1数组的长度是固定的。集合的长度是可变的。</p>
+<p>6.2数组中存储的是同一类型的元素，可以存储基本数据类型值。集合存储的都是对象。而且对象的类型可以不一致。在开发中一般当对象多的时候，使用集合进行存储。</p>
+<p>7.Map.values() 方法用来获取 Map 集合中的所有键值对象。</p>
+<p>8.2021.11.12 关于 Could not autowire. No beans of ‘DataSource‘ type found.问题解决办法 :</p>
+<pre><code> 8.1在@Autowired后面加(required = false)
+
+      @Autowired(required = false)
+ 8.2鼠标移到报错处,用快捷键:ALT+INS ,后选第一个按Ende,在按Ende ,降低 Autowired 检测的级别，将 Severity 的级别由之前的 error 改成 warning 或其它可以忽略的级别。
+</code></pre>
+<p>9.driver-class-name: com.mysql.jdbc.Driver:适用于mysql5以上的。driver-class-name: com.mysql.cj.jdbc.Driver：适用于mysql8以上的。</p>
+<p>10.Failed to bind properties under ‘spring.datasource’ to javax.sql.DataSource:</p>
+<p>根据错误的指示原因，可以发现是没有导入log4j的依赖</p>
+<pre><code>    &lt;!-- log4j --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+        &lt;version&gt;1.2.17&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+<p>11.通常， @Bean方法在@Configuration 类中声明。</p>
 ]]></content>
   </entry>
 </search>
