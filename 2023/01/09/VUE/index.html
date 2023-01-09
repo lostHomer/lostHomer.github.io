@@ -8,7 +8,7 @@
   
   
   <title>
-    Archives: 2023/1 |
+    VUE |
     
     Hexo
   </title>
@@ -33,167 +33,83 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article class="articles">
+  <article id="post-VUE" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
     
-    <h1 class="page-type-title">2023/1</h1>
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <header class="article-header">
       
   
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/2023/01/09/VUE/">VUE</a>
-  </h2>
+  <h1 class="article-title" itemprop="name">
+    VUE
+  </h1>
   
   
 
-      <a href="/2023/01/09/VUE/" class="archive-article-date">
-  <time datetime="2023-01-09T11:22:14.000Z" itemprop="datePublished">01/09</time>
-</a>
     </header>
     
-      
-    
-    
-    
-  </div>
 
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/2023/01/09/Javascript/">Javascript</a>
-  </h2>
-  
-  
-
-      <a href="/2023/01/09/Javascript/" class="archive-article-date">
-  <time datetime="2023-01-09T11:22:04.000Z" itemprop="datePublished">01/09</time>
+    
+    <div class="article-meta">
+      <a href="/2023/01/09/VUE/" class="article-date">
+  <time datetime="2023-01-09T11:22:14.000Z" itemprop="datePublished">2023-01-09</time>
 </a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/2023/01/09/Html-CSS/">Html/CSS</a>
-  </h2>
-  
-  
-
-      <a href="/2023/01/09/Html-CSS/" class="archive-article-date">
-  <time datetime="2023-01-09T11:21:46.000Z" itemprop="datePublished">01/09</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/2023/01/09/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </h2>
-  
-  
-
-      <a href="/2023/01/09/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  <time datetime="2023-01-09T11:20:40.000Z" itemprop="datePublished">01/09</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/2023/01/09/JAVA-SpringBoot/">JAVA/SpringBoot</a>
-  </h2>
-  
-  
-
-      <a href="/2023/01/09/JAVA-SpringBoot/" class="archive-article-date">
-  <time datetime="2023-01-08T16:54:32.000Z" itemprop="datePublished">01/09</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
       
     </div>
+    
+
+    
+    
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <p>想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象<br>root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法<br>root容器里的代码被称为Vue模板<br>Vue实例与容器是一一对应的<br>真实开发中只有一个Vue实例，并且会配合着组件一起使用</p>
+中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性
+<p>一旦data中的数据发生变化，那么模板中用到该数据的地方也会自动更新<br>Vue模板语法包括两大类：</p>
+<pre><code>插值语法：
+    功能：用于解析标签体内容
+    写法：&#123;&#123;xxx&#125;&#125;，xxx是js表达式，且可以直接读取到data中的所有区域
+
+指令语法：
+    功能：用于解析标签（包括：标签属性、标签体内容、绑定事件…）
+    举例：&lt;a v-bind:href=&quot;xxx&quot;&gt;或简写为&lt;a :href=&quot;xxx&quot;&gt;，xxx同样要写js表达式，且可以直接读取到data中的所有属性
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/09/VUE/" data-id="clcoq28mb0002hkw975909480" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
   </div>
+
   
+  
+<nav class="article-nav">
+  
+  
+  <a href="/2023/01/09/Javascript/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Javascript</div>
+  </a>
+  
+</nav>
+
   
 
   
+  
+  
+  
+
+</article>
 </section>
     <footer class="footer">
   <div class="outer">
@@ -212,6 +128,8 @@
     <p><ul class="list-inline">
   
   <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul></p>
   </div>
@@ -292,6 +210,24 @@
 
 
 
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 

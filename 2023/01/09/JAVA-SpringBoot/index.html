@@ -8,7 +8,7 @@
   
   
   <title>
-    Hello World |
+    JAVA/SpringBoot |
     
     Hexo
   </title>
@@ -33,7 +33,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-hello-world" class="article article-type-post" itemscope
+  <article id="post-JAVA-SpringBoot" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -42,7 +42,7 @@
       
   
   <h1 class="article-title" itemprop="name">
-    Hello World
+    JAVA/SpringBoot
   </h1>
   
   
@@ -52,8 +52,8 @@
 
     
     <div class="article-meta">
-      <a href="/2023/01/08/hello-world/" class="article-date">
-  <time datetime="2023-01-07T16:19:55.198Z" itemprop="datePublished">2023-01-08</time>
+      <a href="/2023/01/09/JAVA-SpringBoot/" class="article-date">
+  <time datetime="2023-01-08T16:54:32.000Z" itemprop="datePublished">2023-01-09</time>
 </a>
       
     </div>
@@ -61,32 +61,46 @@
 
     
     
-<div class="tocbot"></div>
-
     
 
     <div class="article-entry" itemprop="articleBody">
       
       
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>1.pom文件加入新的依赖，再写代码没有提示。</p>
+<p>答：右击项目名称，Mavean&gt;Reload project。</p>
+<p>2.@Data相当于@Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode这5个注解的合集。</p>
+<p>3.@Repository用于标注数据访问组件，即DAO组件；他在类路径下寻找标注了上述注解的类，并把这些类纳入进spring容器中管理。</p>
+<p>@Repository：这个注解是具有类似用途和功能的@Component 注解的特化。它为 DAO 提供了额外的好处。它将 DAO 导入 IoC 容器，并使未经检查的异常有资格转换为 Spring DataAccessException。</p>
+<p>4.注入简单来说就是将某个值赋值给某个bean的属性,其实就是给某个bean的属性赋值,再简单点说就是给某个类的属性赋值,但是赋值的方式不是通过new 关键字或者其他直接复制,而是通过spring来赋值的。</p>
+<p>5.Spring的注解形式：<br>@Repository、@Service、@Controller，它们分别对应存储层Bean，业务层Bean，和展示层Bean。</p>
+<p>6.collection集合是java中提供的一种容器，可以用来存储多个数据。</p>
+<p>集合和数组既然都是容器，它们有啥区别呢？</p>
+<p>6.1数组的长度是固定的。集合的长度是可变的。</p>
+<p>6.2数组中存储的是同一类型的元素，可以存储基本数据类型值。集合存储的都是对象。而且对象的类型可以不一致。在开发中一般当对象多的时候，使用集合进行存储。</p>
+<p>7.Map.values() 方法用来获取 Map 集合中的所有键值对象。</p>
+<p>8.2021.11.12 关于 Could not autowire. No beans of ‘DataSource‘ type found.问题解决办法 :</p>
+<pre><code> 8.1在@Autowired后面加(required = false)
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+      @Autowired(required = false)
+ 8.2鼠标移到报错处,用快捷键:ALT+INS ,后选第一个按Ende,在按Ende ,降低 Autowired 检测的级别，将 Severity 的级别由之前的 error 改成 warning 或其它可以忽略的级别。
+</code></pre>
+<p>9.driver-class-name: com.mysql.jdbc.Driver:适用于mysql5以上的。driver-class-name: com.mysql.cj.jdbc.Driver：适用于mysql8以上的。</p>
+<p>10.Failed to bind properties under ‘spring.datasource’ to javax.sql.DataSource:</p>
+<p>根据错误的指示原因，可以发现是没有导入log4j的依赖</p>
+<pre><code>    &lt;!-- log4j --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+        &lt;version&gt;1.2.17&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+<p>11.通常， @Bean方法在@Configuration 类中声明。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/01/08/hello-world/" data-id="clcnmf07b00010ow91frw1i81" class="article-share-link">
+      <a data-url="http://example.com/2023/01/09/JAVA-SpringBoot/" data-id="clcoea7z80000f0w9blav1asq" class="article-share-link">
         Share
       </a>
       
@@ -96,6 +110,20 @@
 
   
   
+<nav class="article-nav">
+  
+  <a href="/2023/01/09/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      数据库
+      
+    </div>
+  </a>
+  
+  
+</nav>
+
   
 
   
